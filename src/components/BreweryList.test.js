@@ -6,7 +6,6 @@ describe('BreweryList', ()=> {
   it('renders the BreweryList', () => {
     const { container } = render(<BreweryList />)
     const listItems = container.querySelectorAll("li")
-    expect(listItems.length).toBe(25)
+    expect(listItems.length).toBe(20)
   })
 })
-
