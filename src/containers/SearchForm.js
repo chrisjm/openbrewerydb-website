@@ -21,9 +21,8 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleChange} placeholder="e.g. 'san diego' or 'ohio'" />
-        <input type="submit" value="Search" />
+      <form onSubmit={this.handleSubmit} className="m-4 sm:m-0 sm:mb-4">
+        <input type="text" onChange={this.handleChange} placeholder="e.g. 'san diego' or 'ohio'" className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" />
       </form>
     )
   }

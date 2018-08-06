@@ -5,8 +5,8 @@ class BreweryList extends PureComponent {
   render() {
     const { breweries } = this.props
     return (
-      <div>
-        <ul>
+      <div className="p-6 rounded bg-grey-lighter">
+        <ul className="list-reset">
           {breweries.map((brewery) => <Brewery key={brewery.id} brewery={brewery} />)}
         </ul>
       </div>

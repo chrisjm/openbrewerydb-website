@@ -5,7 +5,7 @@ class Brewery extends PureComponent {
   render() {
     const { brewery } = this.props
     return (
-      <li>
+      <li className="p-4 mb-2 rounded bg-grey-light">
         <span>{brewery.name}, </span>
         <span>{brewery.address}, </span>
         <span>{brewery.city}, </span>
