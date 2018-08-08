@@ -34,11 +34,13 @@
     "promise": "8.0.1",
     "raf": "3.4.0",
     "react": "^16.4.2",
+    "react-autosuggest": "^9.3.4",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.2",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
+    "throttle-debounce": "^2.0.1",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
@@ -65,7 +67,7 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
-    "testEnvironment": "node",
+    "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
