@@ -4,37 +4,290 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Open Brewery DB is a public database and API of United States breweries built for web developers.">
+    <meta property="og:url" content="https://www.openbrewerydb.org">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Open Brewery DB - The Free Brewery API">
+    <meta property="og:description" content="Open Brewery DB is a public database and API of United States breweries built for web developers.">
+    <meta property="og:image" content="https://www.openbrewerydb.org/images/OpenBreweryDBLogo-1200x630.png">
+
+    <title>Open Brewery DB</title>
+
+    <!-- Code Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <div class="container md:max-w-md mx-auto p-5">
+      <div class="openbrewerydb-logo mx-auto w-full ">
+        <div class="flex items-center justiy-center mb-1">
+          <div class="flex-1">
+            <svg class="fill-current text-black" enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20 8h-12v-2c0-2.206 1.794-4 4-4 1.269 0 2.435.583 3.198 1.598.333.441.959.531 1.4.198.441-.332.53-.959.198-1.4-1.145-1.523-2.893-2.396-4.796-2.396-3.309 0-6 2.691-6 6v2h-2c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2v-12c0-1.104-.896-2-2-2zm-8 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" /></svg>
+          </div>
+          <div class="flex-1">
+            <svg class="fill-current text-black" enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m19.5 9.5c-.514 0-1.016-.078-1.5-.216v8.716c0 .552-.447 1-1 1s-1-.448-1-1v-8.363c-.636.229-1.308.363-2 .363s-1.364-.134-2-.363v8.363c0 .552-.447 1-1 1s-1-.448-1-1v-8.716c-.484.138-.986.216-1.5.216-.813 0-1.583-.182-2.278-.5h-2.222c-1.654 0-3 1.346-3 3v5c0 1.654 1.346 3 3 3h2c0 2.209 1.791 4 4 4h8c2.209 0 4-1.791 4-4v-11h-.222c-.695.318-1.465.5-2.278.5zm-13.5 8.5h-2c-.552 0-1-.449-1-1v-5c0-.551.448-1 1-1h2zm2.5-10.5c.94 0 1.79-.375 2.418-.979.734.896 1.834 1.479 3.082 1.479s2.348-.583 3.082-1.479c.628.604 1.478.979 2.418.979 1.933 0 3.5-1.567 3.5-3.5s-1.567-3.5-3.5-3.5c-.94 0-1.79.375-2.418.979-.734-.896-1.834-1.479-3.082-1.479s-2.348.583-3.082 1.479c-.628-.604-1.478-.979-2.418-.979-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5z"/></svg>
+          </div>
+          <div class="flex-1">
+            <svg class="fill-current text-black" enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 6c5.523 0 10-1.343 10-3s-4.477-3-10-3-10 1.343-10 3c0 1.657 4.478 3 10 3zm0 14c-2.86 0-5.575-.342-7.646-.963-.986-.296-1.752-.64-2.354-1.008v2.471c0 1.933 4.478 3.5 10 3.5 5.523 0 10-1.567 10-3.5v-2.471c-.602.368-1.368.712-2.354 1.008-2.07.621-4.786.963-7.646.963zm0-6c-2.86 0-5.575-.342-7.646-.963-.986-.296-1.752-.64-2.354-1.008v2.971c0 1.657 4.478 3 10 3 5.523 0 10-1.343 10-3v-2.971c-.602.368-1.368.712-2.354 1.008-2.07.621-4.786.963-7.646.963zm0-6c-2.86 0-5.575-.342-7.646-.963-.986-.296-1.752-.64-2.354-1.008v2.971c0 1.657 4.478 3 10 3 5.523 0 10-1.343 10-3v-2.971c-.602.368-1.368.712-2.354 1.008-2.07.621-4.786.963-7.646.963z"/></svg>
+          </div>
+        </div>
+        <h1 class="text-black text-center whitespace-no-wrap text-3xl xs:text-4xl sm:text-5xl font-mono mb-8">
+          Open Brewery DB
+        </h1>
+      </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <div class="md:max-w-md">
+
+        <div class="mb-10">
+          <!-- Brewery Search React Component -->
+          <div id="search"></div>
+        </div>
+
+        <h2 class="mb-5">## About</h2>
+        <div class="mb-10">
+          <p class="mb-5">
+            Open Brewery DB is a free database and <abbr title="Application Program Interface">API</abbr> for public information on breweries, cideries, brewpubs, and bottleshops. Currently it is focused to the United States, but future plans are to import world-wide data.
+          </p>
+        </div>
+
+        <h2 class="mb-5">## Why?</h2>
+        <div class="mb-10">
+          <p class="mb-5">
+            I like craft breweries. I particularly like those which allow my dog, are open during the day, and have WiFi so I can work remote with my best buddy. While there are other websites and resources available, none had an easy-to-use, publically-accessible API.
+          </p>
+          <p class="mb-5">
+            The goal of this project is to keep an up-to-date, curated, and publically available database of breweries for the betterment of the beer community and joy of web developers like myself.
+          </p>
+          <p class="mb-5">
+            Cheers!
+          </p>
+        </div>
+
+        <h2 class="mb-5">## Documentation</h2>
+        <div class="mb-10">
+          <h3 class="mb-5">Endpoints</h3>
+
+          <div class="mb-10">
+            <h4 class="mb-5">List of breweries:</h4>
+            <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries">https://api.openbrewerydb.org/breweries</a></code></pre>
+            <div class="mb-5">JSON:</div>
+            <div class="mb-5">
+              <pre><code class="javascript">[
+    {
+      id: 299,
+      name: "Almanac Beer Company",
+      brewery_type: "micro",
+      address: "651B W Tower Ave",
+      city: "Alameda",
+      state: "CA",
+      postal_code: "94501-5047",
+      phone: "4159326531",
+      website_url: "http://almanacbeer.com",
+      updated_at: "2018-07-24T01:32:51.491Z"
+    },
+    ...
+  ]</code></pre>
+            </div>
+            <div class="mb-5">
+              <h5 class="mb-5">Filter, search, and sort parameters:</h5>
+              <ul>
+                <li>
+                  <pre>by_city</pre>
+                  <ul>
+                    <li>Case-insensitive</li>
+                    <li>Exact match</li>
+                  </ul>
+                </li>
+                <li>
+                  <pre>by_name</pre>
+                  <ul>
+                    <li>Case insensitive</li>
+                    <li>Searches in any position</li>
+                  </ul>
+                </li>
+                <li>
+                  <pre>by_state</pre>
+                  <ul>
+                    <li>Abbreviated (ex. California is <code>CA</code>)</li>
+                    <li>Case insensitive</li>
+                    <li>Exact match</li>
+                  </ul>
+
+                <li>
+                  <pre>by_type</pre>
+                  <ul>
+                      <li>Must be one of: planning, micro, regional, brewpub</li>
+                      <li>Case insensitive</li>
+                  </ul>
+                </li>
+                <li>
+                  <pre>sort</pre>
+                  <ul>
+                    <li><code>+</code> for acending order (default order); <code>-</code> for decending order</li>
+                    <li>comma-separated</li>
+                    <li>Example: <code>sort=-name,+type,city</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-5">
+              <h5 class="mb-5">Filter, search, and sort examples:</h5>
+              <div class="mb-5">Filter breweries by state:</div>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper">https://api.openbrewerydb.org/breweries?by_name=cooper</a></code></pre>
+              <div class="mb-5">Filter breweries by name and state:</div>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=NY">https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=NY</a></code></pre>
+              <div class="mb-5">Filter breweries by state and sort by type then by name in decending order:</div>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_state=oh&sort=type,-name">https://api.openbrewerydb.org/breweries?by_state=oh&sort=type,-name</a></code></pre>
+              <div class="mb-5">Pagination & Per Page (default per page is 20; max per page is 50):</div>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?page=2&per_page=30">https://api.openbrewerydb.org/breweries?page=2&per_page=30</a></code></pre>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h4 class="mb-5">Get a brewery:</h4>
+            <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries/5494" target="_blank">https://api.openbrewerydb.org/breweries/5494</a></code></pre>
+            <div class="mb-5">JSON:</div>
+            <div class="mb-5">
+              <pre><code class="javascript">{
+    id: 5494,
+    name: "MadTree Brewing",
+    brewery_type: "regional",
+    address: "3301 Madison Rd",
+    city: "Cincinnati",
+    state: "OH",
+    postal_code: "45209-1132",
+    phone: "5138368733",
+    website_url: "http://www.madtreebrewing.com",
+    updated_at: "2018-07-24T01:34:01.620Z"
+  }</code></pre>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h4 class="mb-5">Autocomplete:</h4>
+            <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries/autocomplete?query=dog" target="_blank">https://api.openbrewerydb.org/breweries/autocomplete?query=dog</a></code></pre>
+            <div class="mb-5">JSON:</div>
+            <div class="mb-5">
+              <pre><code class="javascript">[
+    {
+      id: "4263",
+      name: "Lead Dog Brewing"
+    },
+    {
+      id: "5359",
+      name: "Boss Dog Brewing"
+    },
+    {
+      id: "5925",
+      name: "Running Dogs Brewery"
+    },
+    ...
+  ]</code></pre>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="mb-5">Parameter:</h5>
+              <ul>
+                <li>
+                  <pre>query</pre>
+                  <ul>
+                    <li>Case-insensitive</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h4 class="mb-5">Search:</h4>
+            <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries/search?query=dog" target="_blank">https://api.openbrewerydb.org/breweries/search?query=dog</a></code></pre>
+            <div class="mb-5">JSON:</div>
+            <div class="mb-5">
+              <pre><code class="javascript">[
+    {
+      id: 4263,
+      name: "Lead Dog Brewing",
+      brewery_type: "micro",
+      address: "415 E 4th St",
+      city: "Reno",
+      state: "NV",
+      postal_code: "89512-3315",
+      phone: "7753915110",
+      website_url: "http://www.leaddogbrewing.com",
+      updated_at: "2018-07-25T02:13:52.688Z"
+    },
+    ...
+  ]</code></pre>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="mb-5">Parameter:</h5>
+              <ul>
+                <li>
+                  <pre>query</pre>
+                  <ul>
+                    <li>Case-insensitive</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h2 class="mb-5">## Credits</h2>
+          <p class="mb-5">
+            Created and maintained by
+            <a href="https://chrisjmears.com" target="_blank">Chris J Mears</a>
+            and
+            <a href="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>.
+          </p>
+          <p class="mb-5">
+            Inital dataset from <a href="https://www.brewersassociation.org/" target="_blank">Brewers Association</a>.
+          </p>
+          <p class="mb-5">
+            Logo via <a href="https://symbolicons.com/" target="_blank">Symbolicons</a>
+          </p>
+        </div>
+
+        <div class="mb-10">
+          <h2 class="mb-5">## Newsletter</h2>
+          <p class="mb-5">
+            Sign up to receive updates. No spam.
+          </p>
+          <form class="mb-5" action="https://openbrewerydb.us18.list-manage.com/subscribe/post?u=202d913a7827f282cbac61f98&amp;id=b47f43c806" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+            <div>
+              <input type="email" value="" name="EMAIL" class="email shadow appearance-none border rounded w-64 py-2 px-3 text-grey-darker leading-tight mb-3" id="mce-EMAIL" placeholder="email address" required>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_202d913a7827f282cbac61f98_b47f43c806" tabindex="-1" value="">
+              </div>
+              <div class="clear">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="mb-5 text-center">
+          &copy; 2018 <a hre="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
