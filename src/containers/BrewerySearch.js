@@ -4,7 +4,7 @@ import { debounce } from 'throttle-debounce'
 import Autosuggest from 'react-autosuggest'
 import Brewery from '../components/Brewery';
 
-const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST
+const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST || "https://api.openbrewerydb.org"
 
 const getSuggestionValue = suggestion => suggestion.name;
 
