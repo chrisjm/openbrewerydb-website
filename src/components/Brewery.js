@@ -32,7 +32,7 @@ class Brewery extends PureComponent {
             <span>({brewery.brewery_type})</span>
           </div>
           :
-          <span>No breweries found.</span>
+          <span>No brewery selected.</span>
         }
       </div>
     )
