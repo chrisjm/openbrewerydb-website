@@ -23,14 +23,18 @@ class Brewery extends PureComponent {
     return (
       <div className={`p-4 mb-2 rounded ${bgColor}`}>
         { (Object.keys(brewery).length !== 0) ?
-          <div>
-            <span>{brewery.name}, </span>
-            { brewery.address !== '' ? <span>{brewery.address}, </span> : '' }
-            { brewery.city !== '' ? <span>{brewery.city}, </span> : '' }
-            { brewery.state !== '' ? <span>{brewery.state}, </span> : '' }
-            { brewery.postal_code !== '' ? <span>{brewery.postal_code}, </span> : '' }
-            <span>({brewery.brewery_type})</span>
-          </div>
+          <address className="roman">
+            <div className="text-lg mb-2">
+              <span className="font-bold">{brewery.name} </span>
+              <span>({brewery.brewery_type})</span>
+            </div>
+            { brewery.address !== '' ? <div>{brewery.address}</div> : '' }
+            <div>
+              { brewery.city !== '' ? <span>{brewery.city}, </span> : '' }
+              { brewery.state !== '' ? <span>{brewery.state}, </span> : '' }
+              { brewery.postal_code !== '' ? <span>{brewery.postal_code} </span> : '' }
+            </div>
+          </address>
           :
           <span>No brewery selected.</span>
         }
