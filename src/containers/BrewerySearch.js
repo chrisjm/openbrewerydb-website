@@ -30,15 +30,12 @@ class BrewerySearch extends Component {
   getSuggestions = value => {
     const params = { query: value }
 
-    console.log(`GET breweries/autocomplete?query=${params.query}`)
-
     axios.get(`${API_SERVER_HOST}/breweries/autocomplete`, { params: params })
       .then(res => {
         this.setState({ suggestions: res.data })
       })
       .catch(error => {
         this.setState({ suggestions: [] })
-        console.log(error)
       })
   }
 
@@ -61,15 +58,11 @@ class BrewerySearch extends Component {
   onSuggestionSelected = (_event, { suggestion }) => {
     const brewery = suggestion
 
-    console.log(`GET breweries/${brewery.id}`)
-
     axios.get(`${API_SERVER_HOST}/breweries/${brewery.id}`)
       .then(res => {
         this.setState({ brewery: res.data })
       })
-      .catch(error => {
-        console.log(error)
-      })
+      .catch(error => {})
   }
 
   render() {
