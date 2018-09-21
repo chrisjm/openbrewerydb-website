@@ -18,24 +18,22 @@
 
     <title>Open Brewery DB</title>
 
-    <!-- Code Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700" rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
-    <!-- Sentry -->
     <script src="https://cdn.ravenjs.com/3.26.4/raven.min.js" crossorigin="anonymous"></script>
     <script>
       Raven.config('https://6d8fadc436de436a835c9314aa7a2235@sentry.io/1277188').install()
     </script>
-    <!-- END Sentry -->
 
-    <!-- Google Analytics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122476813-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -44,7 +42,6 @@
 
       gtag('config', 'UA-122476813-1');
     </script>
-    <!-- END Google Analytics -->
   </head>
   <body>
 
@@ -100,8 +97,12 @@
             The goal of this project is to keep an up-to-date, curated, and publically available database of breweries for the betterment of the beer community and joy of web developers like myself.
           </p>
           <p class="mb-5">
-            Cheers!
+            Cheers! 🍻
           </p>
+          <div class="mb-5">
+            <a href="https://instagram.com/openbrewerydb/" class="text-lg mr-1 text-pink hover:text-pink-dark" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/openbrewerydb/" class="text-lg text-blue hover:text-blue-dark" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
         </div>
 
         <h2 class="mb-5">## Documentation</h2>
@@ -322,11 +323,16 @@
         <div class="mb-5 text-center">
           &copy; 2018 <a hre="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>
         </div>
+
+        <div class="mb-5 text-center">
+          <a href="https://instagram.com/openbrewerydb/" class="text-5xl mr-5 text-pink hover:text-pink-dark" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/openbrewerydb/" class="text-5xl text-blue hover:text-blue-dark" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
       </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <a href="https://github.com/chrisjm/openbrewerydb-website"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
