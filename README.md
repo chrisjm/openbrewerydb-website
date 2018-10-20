@@ -12,7 +12,7 @@ The Open Brewery DB website is an information and documentation site for the [Op
 * Clone repository `git clone https://github.com/chrisjm/openbrewerydb-website`
 * Install dependencies `npm install`
 * Run development server `npm start`
-* The server will be running at `http://localhost:4000`
+* The server will be running at `http://localhost:3000`
 
 ## Environment Variables
 
