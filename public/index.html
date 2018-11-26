@@ -44,7 +44,6 @@
     </script>
   </head>
   <body>
-
     <div class="absolute h-2 w-full pin-t bg-yellow-dark"></div>
 
     <div class="container md:max-w-md mx-auto p-10 mt-10">
@@ -66,47 +65,63 @@
       </div>
 
       <div class="md:max-w-md">
+        <nav id="menu" class="block mb-10">
+          <ul class="flex justify-between flex-wrap list-reset">
+            <li class="flex-1 p-2">
+              <a href="#about">About</a>
+            </li>
+            <li class="flex-1 p-2">
+              <a href="#brewery-search">Search</a>
+            </li>
+            <li class="flex-1 p-2">
+              <a href="#updates">Updates</a>
+            </li>
+            <li class="flex-1 p-2">
+              <a href="#documentation">Documentation</a>
+            </li>
+            <li class="flex-1 p-2">
+              <a href="#newsletter">Newsletter</a>
+            </li>
+          </ul>
+        </nav>
 
-        <div class="mb-10">
-          <!-- Brewery Search React Component -->
-          <div id="search"></div>
-        </div>
-
-        <div class="mb-10 p-3 border rounded border-grey-light bg-yellow-lighter">
-          <p class="mb-3">
-            <strong>Note:</strong> The API is still in BETA and subject to change. If you are planning any production-ready projects, please subscribe to the <a href="#newsletter">Newsletter</a> for updates. Thank you!
-          </p>
-          <p class="font-bold text-right">
-            &mdash; Management
-          </p>
-        </div>
-
-        <h2 class="mb-5">## About</h2>
-        <div class="mb-10">
-          <p class="mb-5">
-            Open Brewery DB is a free database and <abbr title="Application Program Interface">API</abbr> for public information on breweries, cideries, brewpubs, and bottleshops. Currently it is focused to the United States, but future plans are to import world-wide data.
-          </p>
-        </div>
-
-        <h2 class="mb-5">## Why?</h2>
-        <div class="mb-10">
-          <p class="mb-5">
-            I like craft breweries. I particularly like those which allow my dog, are open during the day, and have WiFi so I can work remote with my best buddy. While there are other websites and resources available, none had an easy-to-use, publically-accessible API.
-          </p>
-          <p class="mb-5">
-            The goal of this project is to keep an up-to-date, curated, and publically available database of breweries for the betterment of the beer community and joy of web developers like myself.
-          </p>
-          <p class="mb-5">
-            Cheers! 🍻
-          </p>
-          <div class="mb-5">
-            <a href="https://instagram.com/openbrewerydb/" class="text-lg mr-1 text-pink hover:text-pink-dark" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/openbrewerydb/" class="text-lg text-blue hover:text-blue-dark" target="_blank"><i class="fab fa-twitter"></i></a>
+        <section id="about" class="mb-10">
+          <h2 class="mb-5">About</h2>
+          <div class="mb-10">
+            <p class="mb-5">
+              Open Brewery DB is a free <abbr title="Application Program Interface">API</abbr> for public information on breweries, cideries, brewpubs, and bottleshops. Currently it is focused to the United States, but future plans are to import world-wide data.
+            </p>
           </div>
-        </div>
+        </section>
 
-        <h2 class="mb-5">## Documentation</h2>
-        <div class="mb-10">
+        <section id="brewery-search" class="mb-10">
+          <h2 class="mb-5">Brewery Search</h2>
+          <div class="mb-5">
+            <!-- Brewery Search React Component -->
+            <div id="search"></div>
+          </div>
+          <p>
+            <a href="https://github.com/chrisjm/openbrewerydb-website" target="_blank">View Source</a>
+          </p>
+        </section>
+
+        <section id="updates" class="mb-10">
+          <h2 class="mb-5">Updates</h2>
+          <div class="mb-10">
+            <p class="mb-5">
+              <h3 class="mb-2">2018-11-25</h3>
+              <ul class="leading-normal">
+                <li>Add a <a href="https://github.com/chrisjm/openbrewerydb-api-server/blob/master/CHANGELOG.md" target="_blank">CHANGELOG</a></li>
+                <li>Add tagging functionality to Breweries.</li>
+                <li><strong>IN PROGRESS:</strong><br>Add tags to breweries. If you'd like to help, <a href="#newsletter">sign up for the newsletter</a>. Thanks!</li>
+              </ul>
+            </p>
+          </div>
+        </section>
+
+        <section id="documentation" class="mb-10">
+          <h2 class="mb-5">Documentation</h2>
+
           <h3 class="mb-5">Endpoints</h3>
 
           <div class="mb-10">
@@ -129,7 +144,8 @@
     latitude: "37.7834497667258",
     phone: "4159326531",
     website_url: "http://almanacbeer.com",
-    updated_at: "2018-08-23T23:24:11.758Z"
+    updated_at: "2018-08-23T23:24:11.758Z",
+    tag_list: []
   },
   ...
 ]</code></pre>
@@ -157,13 +173,21 @@
                     <li>Case insensitive</li>
                     <li>Searches in any position</li>
                   </ul>
-
+                </li>
                 <li>
                   <pre>by_type</pre>
                   <ul>
                       <li>Must be one of: micro, regional, brewpub, large, planning, bar, contract, proprietor</li>
                       <li>Case insensitive</li>
                       <li>Exact match</li>
+                  </ul>
+                </li>
+                <li>
+                  <pre>by_tag</pre>
+                  <ul>
+                      <li>One of: dog-friendly, patio, food-service, food-truck, tours</li>
+                      <li>Case insensitive</li>
+                      <li><strong>Note that the production database does not yet have many tags associated with breweries. If you'd like to help, <a href="#newsletter">sign up for the newsletter</a>.</strong></li>
                   </ul>
                 </li>
                 <li>
@@ -182,6 +206,8 @@
               <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_state=NY">https://api.openbrewerydb.org/breweries?by_state=NY</a></code></pre>
               <div class="mb-5">Filter breweries by name:</div>
               <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper">https://api.openbrewerydb.org/breweries?by_name=cooper</a></code></pre>
+              <div class="mb-5">Filter breweries by a tag:</div>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_tag=patio">https://api.openbrewerydb.org/breweries?by_tag=patio</a></code></pre>
               <div class="mb-5">Filter breweries by name and state:</div>
               <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=NY">https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=NY</a></code></pre>
               <div class="mb-5">Filter breweries by state and sort by type then by name in decending order:</div>
@@ -209,7 +235,10 @@
   latitude: "39.1563725",
   phone: "5138368733",
   website_url: "http://www.madtreebrewing.com",
-  updated_at: "2018-08-24T15:44:22.281Z"
+  updated_at: "2018-08-24T15:44:22.281Z",
+  tag_list: [
+    "patio"
+  ]
 }</code></pre>
             </div>
           </div>
@@ -268,7 +297,8 @@
     latitude: "37.807739",
     phone: "5103061914",
     website_url: "http://www.divingdogbrew.com",
-    updated_at: "2018-08-23T23:27:26.494Z"
+    updated_at: "2018-08-23T23:27:26.494Z",
+    tag_list: []
   },
   ...
 ]</code></pre>
@@ -286,28 +316,12 @@
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="mb-10">
-          <h2 class="mb-5">## Credits</h2>
+        <section class="mb-10" id="newsletter">
+          <h2 class="mb-5">Newsletter</h2>
           <p class="mb-5">
-            Created and maintained by
-            <a href="https://chrisjmears.com" target="_blank">Chris J Mears</a>
-            and
-            <a href="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>.
-          </p>
-          <p class="mb-5">
-            Inital dataset from <a href="https://www.brewersassociation.org/" target="_blank">Brewers Association</a>.
-          </p>
-          <p class="mb-5">
-            Logo via <a href="https://symbolicons.com/" target="_blank">Symbolicons</a>
-          </p>
-        </div>
-
-        <div class="mb-10" id="newsletter">
-          <h2 class="mb-5">## Newsletter</h2>
-          <p class="mb-5">
-            Sign up to receive updates. No spam.
+            The API is still in <strong>BETA</strong>. Sign up to receive updates.
           </p>
           <form class="mb-5" action="https://openbrewerydb.us18.list-manage.com/subscribe/post?u=202d913a7827f282cbac61f98&amp;id=b47f43c806" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
             <div>
@@ -320,16 +334,54 @@
               </div>
             </div>
           </form>
-        </div>
+        </section>
 
-        <div class="mb-5 text-center">
-          &copy; 2018 <a hre="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>
-        </div>
+        <section id="why" class="mb-10">
+          <h2 class="mb-5">Why?</h2>
+          <div class="mb-10">
+            <p class="mb-5">
+              I like craft breweries. I particularly like those which allow my dog, are open during the day, and have WiFi so I can work remote with my best buddy. While there are other websites and resources available, none had an easy-to-use, publically-accessible API.
+            </p>
+            <p class="mb-5">
+              The goal of this project is to keep an up-to-date, curated, and publically available database of breweries for the betterment of the beer community and joy of web developers like myself.
+            </p>
+            <p class="mb-5">
+              Cheers! 🍻
+            </p>
+            <div class="mb-5">
+              <a href="https://instagram.com/openbrewerydb/" class="text-lg mr-1 text-pink hover:text-pink-dark" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/openbrewerydb/" class="text-lg text-blue hover:text-blue-dark" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </section>
 
-        <div class="mb-5 text-center">
-          <a href="https://instagram.com/openbrewerydb/" class="text-5xl mr-5 text-pink hover:text-pink-dark" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/openbrewerydb/" class="text-5xl text-blue hover:text-blue-dark" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
+        <section id="credits" class="mb-10">
+
+          <h2 class="mb-5">Credits</h2>
+          <p class="mb-5">
+            Created and maintained by
+            <a href="https://chrisjmears.com" target="_blank">Chris J Mears</a>
+            and
+            <a href="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>.
+          </p>
+          <p class="mb-5">
+            Inital dataset from <a href="https://www.brewersassociation.org/" target="_blank">Brewers Association</a>.
+          </p>
+          <p class="mb-5">
+            Logo via <a href="https://symbolicons.com/" target="_blank">Symbolicons</a>
+          </p>
+        </section>
+
+        <footer>
+          <div class="mb-5 text-center">
+            &copy; 2018 <a hre="https://wanderingleafstudios.com/" target="_blank">Wandering Leaf Studios LLC</a>
+          </div>
+
+          <div class="mb-5 text-center">
+            <a href="https://instagram.com/openbrewerydb/" class="text-5xl mr-5 text-pink hover:text-pink-dark" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/openbrewerydb/" class="text-5xl text-blue hover:text-blue-dark" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </footer>
       </div>
     </div>
 
