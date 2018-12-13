@@ -71,16 +71,13 @@
               <a href="#about">About</a>
             </li>
             <li class="flex-1 p-2">
-              <a href="#brewery-search">Search</a>
+              <a href="#projects">Projects</a>
             </li>
             <li class="flex-1 p-2">
-              <a href="#updates">Updates</a>
+              <a href="#news">News</a>
             </li>
             <li class="flex-1 p-2">
               <a href="#documentation">Documentation</a>
-            </li>
-            <li class="flex-1 p-2">
-              <a href="#newsletter">Newsletter</a>
             </li>
           </ul>
         </nav>
@@ -91,25 +88,20 @@
             <p class="mb-5">
               Open Brewery DB is a free <abbr title="Application Program Interface">API</abbr> for public information on breweries, cideries, brewpubs, and bottleshops. Currently it is focused to the United States, but future plans are to import world-wide data.
             </p>
-            <p class="mb-5">
-              A Python interface for the API is available on <a href="https://github.com/jrbourbeau/openbrewerydb-python" target="_blank">GitHub</a>.
-            </p>
+          </div>
+
+          <h3 class="mb-5">Brewery Search</h3>
+          <div id="brewery-search" class="mb-5">
+            <div class="mb-5">
+              <!-- Brewery Search React Component -->
+              <div id="search"></div>
+            </div>
           </div>
         </section>
 
-        <section id="brewery-search" class="mb-10">
-          <h2 class="mb-5">Brewery Search</h2>
-          <div class="mb-5">
-            <!-- Brewery Search React Component -->
-            <div id="search"></div>
-          </div>
-          <p>
-            <a href="https://github.com/chrisjm/openbrewerydb-website" target="_blank">View Source</a>
-          </p>
-        </section>
 
-        <section id="updates" class="mb-10">
-          <h2 class="mb-5">Updates</h2>
+        <section id="news" class="mb-10">
+          <h2 class="mb-5">News & Updates</h2>
           <div class="mb-10">
             <p class="mb-5">
               <h3 class="mb-2">2018-11-25</h3>
@@ -120,6 +112,48 @@
               </ul>
             </p>
           </div>
+
+          <h2 class="mb-5">Newsletter</h2>
+          <p class="mb-5">
+            The API is still in <strong>BETA</strong>. Sign up to receive updates.
+          </p>
+          <form class="mb-5" action="https://openbrewerydb.us18.list-manage.com/subscribe/post?u=202d913a7827f282cbac61f98&amp;id=b47f43c806" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+            <div>
+              <input type="email" value="" name="EMAIL" class="email shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight mb-3" id="mce-EMAIL" placeholder="email address" required>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_202d913a7827f282cbac61f98_b47f43c806" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+                </div>
+            </div>
+          </form>
+        </section>
+
+        <section id="projects" class="mb-10">
+          <h2 class="mb-5">Projects</h2>
+
+          <p class="mb-5">
+            A list of projects which use the Open Brewery DB API.
+          </p>
+
+          <ul class="leading-normal">
+            <li class="mb-5">
+              <a href="https://github.com/chrisjm/openbrewerydb-website/tree/master/src" target="_blank" class="font-bold block">
+                ReactJS Brewery Search
+              </a>
+              The source for the above Brewery Search component
+            </li>
+            <li class="mb-10">
+              <a href="https://github.com/jrbourbeau/openbrewerydb-python" target="_blank" class="font-bold block">
+                Python API wrapper
+              </a>
+              A Python interface for the API built and maintained by
+              <a href="https://github.com/jrbourbeau/" target="_blank">
+                @jrbourbeau
+              </a>
+            </li>
+          </ul>
         </section>
 
         <section id="documentation" class="mb-10">
@@ -321,24 +355,6 @@
           </div>
         </section>
 
-        <section class="mb-10" id="newsletter">
-          <h2 class="mb-5">Newsletter</h2>
-          <p class="mb-5">
-            The API is still in <strong>BETA</strong>. Sign up to receive updates.
-          </p>
-          <form class="mb-5" action="https://openbrewerydb.us18.list-manage.com/subscribe/post?u=202d913a7827f282cbac61f98&amp;id=b47f43c806" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-            <div>
-              <input type="email" value="" name="EMAIL" class="email shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight mb-3" id="mce-EMAIL" placeholder="email address" required>
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_202d913a7827f282cbac61f98_b47f43c806" tabindex="-1" value="">
-              </div>
-              <div class="clear">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
-              </div>
-            </div>
-          </form>
-        </section>
-
         <section id="why" class="mb-10">
           <h2 class="mb-5">Why?</h2>
           <div class="mb-10">
@@ -359,7 +375,6 @@
         </section>
 
         <section id="credits" class="mb-10">
-
           <h2 class="mb-5">Credits</h2>
           <p class="mb-5">
             Created and maintained by
