@@ -64,7 +64,7 @@ class Brewery extends PureComponent {
             { address ?
               <div>
                 <a
-                  class="text-white"
+                  className="text-white"
                   href={`https://www.google.com/maps/search/?api=1&query=${address}`}
                   target="_blank"
                   rel="noopener noreferrer"
