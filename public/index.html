@@ -27,9 +27,9 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
-    <script src="https://cdn.ravenjs.com/3.26.4/raven.min.js" crossorigin="anonymous"></script>
+    <script src="https://browser.sentry-cdn.com/4.4.2/bundle.min.js" crossorigin="anonymous"></script>
     <script>
-      Raven.config('https://6d8fadc436de436a835c9314aa7a2235@sentry.io/1277188').install()
+      Sentry.init({ dsn: 'https://6d8fadc436de436a835c9314aa7a2235@sentry.io/1277188' });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
