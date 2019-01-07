@@ -32,8 +32,6 @@
       Sentry.init({ dsn: 'https://6d8fadc436de436a835c9314aa7a2235@sentry.io/1277188' });
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122476813-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -405,6 +403,11 @@
 
     <a href="https://github.com/chrisjm/openbrewerydb-website"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+      if (typeof hljs !== 'undefined') {
+        hljs.initHighlightingOnLoad();
+      }
+    </script>
   </body>
 </html>
