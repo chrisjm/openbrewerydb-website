@@ -102,6 +102,19 @@
           <h2 class="mb-5">News & Updates</h2>
           <div class="mb-10">
             <p class="mb-5">
+              <h3 class="mb-2">2019-03-07</h3>
+              <ul class="leading-normal">
+                <li>
+                  Fix issue with the <a href="#documentation"><pre>by_state</pre> filter</a>. Currently, you may only search by full state name and not abbreviations.
+                </li>
+                <li>
+                  Updated the <a href="#documentation">documentation</a> to reflect all of the changes and additional <pre>by_tags</pre> filter.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="mb-10">
+            <p class="mb-5">
               <h3 class="mb-2">2018-11-25</h3>
               <ul class="leading-normal">
                 <li>Add a <a href="https://github.com/chrisjm/openbrewerydb-api-server/blob/master/CHANGELOG.md" target="_blank">CHANGELOG</a></li>
@@ -207,6 +220,7 @@
                   <ul>
                     <li>Case insensitive</li>
                     <li>Searches in any position</li>
+                    <li>Full state name in snake_case, no abbreviation (ex. "new_york")</li>
                   </ul>
                 </li>
                 <li>
@@ -226,10 +240,18 @@
                   </ul>
                 </li>
                 <li>
+                  <pre>by_tags</pre>
+                  <ul>
+                      <li>Comma-separated list of: dog-friendly, patio, food-service, food-truck, tours</li>
+                      <li>Case insensitive</li>
+                      <li>Combined with AND</li>
+                  </ul>
+                </li>
+                <li>
                   <pre>sort</pre>
                   <ul>
                     <li><code>+</code> for acending order (default order); <code>-</code> for decending order</li>
-                    <li>comma-separated</li>
+                    <li>Comma-separated</li>
                     <li>Example: <code>sort=-name,+type,city</code></li>
                   </ul>
                 </li>
@@ -238,15 +260,15 @@
             <div class="mb-5">
               <h5 class="mb-5">Filter, search, and sort examples:</h5>
               <div class="mb-5">Filter breweries by state:</div>
-              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_state=NY">https://api.openbrewerydb.org/breweries?by_state=NY</a></code></pre>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_state=new_york">https://api.openbrewerydb.org/breweries?by_state=new_york</a></code></pre>
               <div class="mb-5">Filter breweries by name:</div>
               <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper">https://api.openbrewerydb.org/breweries?by_name=cooper</a></code></pre>
               <div class="mb-5">Filter breweries by a tag:</div>
               <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_tag=patio">https://api.openbrewerydb.org/breweries?by_tag=patio</a></code></pre>
               <div class="mb-5">Filter breweries by name and state:</div>
-              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=NY">https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=NY</a></code></pre>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=new_york">https://api.openbrewerydb.org/breweries?by_name=cooper&by_state=new_york</a></code></pre>
               <div class="mb-5">Filter breweries by state and sort by type then by name in decending order:</div>
-              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_state=oh&sort=type,-name">https://api.openbrewerydb.org/breweries?by_state=oh&sort=type,-name</a></code></pre>
+              <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?by_state=ohio&sort=type,-name">https://api.openbrewerydb.org/breweries?by_state=ohio&sort=type,-name</a></code></pre>
               <div class="mb-5">Pagination & Per Page (default per page is 20; max per page is 50):</div>
               <pre class="mb-5"><code class="http"><a href="https://api.openbrewerydb.org/breweries?page=2&per_page=30">https://api.openbrewerydb.org/breweries?page=2&per_page=30</a></code></pre>
             </div>
