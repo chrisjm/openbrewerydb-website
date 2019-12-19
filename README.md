@@ -1,4 +1,6 @@
-# Open Brewery DB - Website
+# Open Brewery DB - Website (deprecated)
+
+**This repository is deprecated and replaced by [openbrewerydb-gatsby](https://github.com/chrisjm/openbrewerydb-gatsby).**
 
 The Open Brewery DB website is an information and documentation site for the [Open Brewery DB API](https://www.github.com/chrisjm/openbrewerydb-api-server).
 
