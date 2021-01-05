@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "react": "^16.4.2",
     "react-app-polyfill": "^0.2.0",
     "react-autosuggest": "^9.3.4",
